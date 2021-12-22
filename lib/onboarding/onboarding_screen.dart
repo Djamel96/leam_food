@@ -19,7 +19,7 @@ class DotsIndicator extends AnimatedWidget {
     this.controller,
     this.itemCount,
     this.onPageSelected,
-    this.color: MyColors.appMain100,
+    this.color = MyColors.appMain100,
   }) : super(listenable: controller);
 
   /// The PageController that this DotsIndicator is representing.
@@ -215,18 +215,7 @@ class FirstOnboardingScreenState extends State<FirstOnboardingScreen> {
                             letterSpacing: -0.3,
                           )),
                       onPressed: () {
-                        if (pageNum < 2) {
-                          setState(() {
-                            pageNum++;
-                          });
-                          _controller.animateToPage(
-                            pageNum,
-                            duration: _kDuration,
-                            curve: _kCurve,
-                          );
-                        } else {
-                          Get.offAll(const LoginScreen());
-                        }
+                        Get.offAll(const LoginScreen());
                       },
                     ),
                   ],
